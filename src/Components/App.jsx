@@ -8,7 +8,7 @@ function App() {
     <Header/>
     <Form/>
       
-       <p className="text-red-500">Template</p>
+    
 
     </div>
   );
