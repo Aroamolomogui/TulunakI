@@ -7,24 +7,25 @@ function Form() {
       <h2 className="mt-4 text-2xl font-bold">Tu signo lunar es</h2>
       </div>
 
-    <div className="max-w-2x1 w-full space-y-8 p-8 rounded-xl shadow-2xl">
+    <div className="max-w-2x1 w-full space-y-8 p-8 bg-black bg-opacity-10 backdrop-blur-md rounded-xl shadow-2xl">
       <div className="text-center">
     <h2 className="mt-4 text-2xl font-bold text-black"
     >Descubre tu signo lunar</h2>
-    <p className="mt-2 text-base text-gray-200">Ingresa tus datos para revelar los secretos de tu luna</p>
+    <p className="mt-2 text-base text-gray-500">Ingresa tus datos para revelar los secretos de tu luna</p>
     </div>
     </div>
 
-    <div>
+    
       <form className="mt-8 space-y-6">   
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
           <label htmlFor="nombre" className="block text-base font-medium text-black">Nombre</label>
           <input
           id="nombre"
           name="nombre"
           type="text"
           required
-          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300"
+          className="mt-1 block w-full border border-gray-300 rounded-3xl shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300"
           />
         </div>
         <div>
@@ -34,7 +35,7 @@ function Form() {
           name="Apellidos"
           type="text"
           required
-          className="mt-1 block w-full border border-gray-400 rounded-md shadow-sm py-2 px3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm
+          className="mt-1 block w-full border border-gray-400 rounded-3xl shadow-sm py-2 px3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm
          "
           />
         </div>
@@ -45,7 +46,7 @@ function Form() {
           name="Fecha de Nacimiento"
           type="text"
           required
-          className="mt-1 block w-full border border-gray-400 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300" />
+          className="mt-1 block w-full border border-gray-400 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300" />
         </div>
         <div>
           <label htmlFor="Hora de Nacimiento"className="block text-base font-medium text-black">Hora de Nacimiento</label>
@@ -54,7 +55,7 @@ function Form() {
           name="Hora de nacimiento"
           type="text"
           required
-          className="mt-1 block w-full border border-gray-400 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 sm:text-sm " />
+          className="mt-1 block w-full border border-gray-400 rounded-3xl shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 sm:text-sm " />
         </div>
         <div>
           <label htmlFor="Lugar de nacimiento"className="block text-base font-medium text-black">Lugar de nacimiento</label>
@@ -63,7 +64,7 @@ function Form() {
           name="Lugar de nacimiento"
           type="text"
           required
-          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300" />
+          className="mt-1 block w-full border border-gray-300 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300" />
         </div>
         <div>
           <label htmlFor="País"className="block text-base font-medium text-black">País</label>
@@ -72,18 +73,19 @@ function Form() {
           name="País" 
           type="text"
           required
-          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" />
+          className="mt-1 block w-full border border-gray-300 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" />
         </div>
-        <div>
+        </div>
+        <div className="pt-4">
           <button
           type="submit"
-          className="">
+          className="w-full flex justify-center self-start py-2 px-4 border border-gray-300 rounded-3xl shadow-lg text-base font-semibold hover:bg-slate-200 ">
             Descubrir mi Signo Lunar
           </button>
         </div>
-        </form>
-    </div>
-
+        
+    
+    </form>
     </div>;
 }
 
