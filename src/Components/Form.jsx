@@ -11,7 +11,7 @@ function Form() {
       <div className="text-center">
     <h2 className="mt-4 text-2xl font-bold text-black"
     >Descubre tu signo lunar</h2>
-    <p className="mt-2 text-base text-black">Ingresa tus datos para revelar los secretos de tu luna</p>
+    <p className="mt-2 text-base text-gray-200">Ingresa tus datos para revelar los secretos de tu luna</p>
     </div>
     </div>
 
