@@ -1,11 +1,17 @@
 
+import Header from './Header';
+import Form from './Form';
 
 function App() {
   return (
-    <>
-       <p className="text-red-500">Template</p>
-    </>
-  )
+    <div>
+    <Header/>
+    <Form/>
+      
+    
+
+    </div>
+  );
 }
 
-export default App
+export default App;
