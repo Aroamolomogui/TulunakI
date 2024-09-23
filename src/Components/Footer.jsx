@@ -1,4 +1,11 @@
 import React from "react";
+<<<<<<< Updated upstream
+import { TikTok } from 'lucide-react';
+=======
+import Instagram from 'lucide-react/dist/esm/icons/instagram';
+import TikTok from
+
+>>>>>>> Stashed changes
 
 
 
@@ -24,7 +31,9 @@ function Footer() {
             <h3 className="text-lg font-semibold mb-4">Síguenos</h3>
             <div className="flex space-x-4">
               <a href="">Instagram icono  PROBLEMA CON LA IMPORTACIÓN</a>
-              <a href="">TikTok PROBLEMA CON LA IMPORTACIÓN</a>
+              <a href="https://www.tiktok.com/@aroamolomogui" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Visita nuestro perfil de TikTok">
+                <TikTok size={24} />
+              </a>
             </div>
           
         </div>
@@ -33,7 +42,7 @@ function Footer() {
       <div className="mt-8 pt-8 border-t border-black text-center text-sm text-gray-300"></div>
       <p>&copy; {new Date().getFullYear()} TulunakI Astrología. Todos los derechos reservados.</p>
     </div>
-    
+
   </footer>;
 }
 
