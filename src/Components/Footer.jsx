@@ -1,4 +1,7 @@
 import React from "react";
+import { Instagram } from 'lucide-react';
+import { FaTiktok } from "react-icons/fa6";
+
 
 
 
@@ -23,8 +26,8 @@ function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Síguenos</h3>
             <div className="flex space-x-4">
-              <a href="">Instagram icono  PROBLEMA CON LA IMPORTACIÓN</a>
-              <a href="">TikTok icono  PROBLEMA CON LA IMPORTACIÓN</a>
+              <a href=""><Instagram /></a>
+              <a href=""><FaTiktok /></a>
               
             </div>
           
