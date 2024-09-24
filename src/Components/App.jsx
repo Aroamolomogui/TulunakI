@@ -1,6 +1,7 @@
 
 import Header from './Header';
 import Form from './Form';
+import Footer from './Footer';
 import Hero from './Hero';
 
 
@@ -10,9 +11,7 @@ function App() {
     <Header/>
     <Hero/>
     <Form/>
-
-  
-  
+    <Footer/>
     </div>
   );
 }
