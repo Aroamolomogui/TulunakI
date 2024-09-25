@@ -14,25 +14,33 @@ function Header() {
 
             <nav className="hidden md:flex items-center space-x-6">
               <a href="/Miluna" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
-              <span className="relative"> 
-                Mi luna
-                <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-              </span>
-            </a>
+                <span className="relative"> 
+                  Mi luna
+                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                </span>
+              </a>
 
               <a href="/Equilibrio emocional" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
                 <span className="realtive">
                   Equilibrio emocional 
-                <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-              </span>
-            </a>
+                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                </span>
+              </a>
 
-            <a href="/Contacto" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
-            <span className="relative">
-              Contacto 
-              <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-              </span>
-            </a>
+              <a href="/Contacto" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
+                <span className="relative">
+                Contacto 
+                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                  {/* Ellis: aquí el problema era que estaba puesto "bg-black" en vez de "bg-violet-500" y por eso el subrayado salía en negro */}
+                </span>
+              </a> 
+
+              <a href="/Quienes somos" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
+                <span className="realtive">
+                  Quiénes somos 
+                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                </span>
+              </a> 
             </nav>
 
         </div>
