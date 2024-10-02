@@ -2,7 +2,7 @@ import React from "react";
 
 function Form() {
   return (
-    <div className="w-full md:w-1/2 bg-white p-8 flex flex-col justify-center">
+    <div className="w-full bg-white p-8 flex flex-col justify-center">
       <div className="max-w-2x1 w-full space-y-8 p-8 bg-black bg-opacity-10 backdrop-blur-md rounded-xl shadow-2xl">
         <div className="text-center">
           <h2 className="mt-4 text-2xl font-bold text-black">
