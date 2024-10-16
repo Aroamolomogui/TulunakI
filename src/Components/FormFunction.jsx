@@ -12,14 +12,17 @@ const FormFunction = () => {
     city: "",
   });
 
+  //hook useState para crear y manejar el estado del componente
+
   const [lunarPosition, setLunarPosition] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Función para obtener las coordenadas usando la API de OpenCage
+  // Función para obtener las coordenadas geográficas (longitud y latitud) usando la API de OpenCage
 
   const getCoordinates = async (city, country) => {
     const apiKey = "6090c7f31b4c460386f16d7de93eff55";
     const address = `${city}, ${country}`;
+    console.log(address);
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(
       address
     )}&key=${apiKey}`;
@@ -44,9 +47,10 @@ const FormFunction = () => {
     }
   };
 
-  // Maneja el envío del formulario
+  // Maneja el envío del formulario, realiza validaciones, obtiene coordenadas y calcula la posición lunar utilizando al biblioteca astronomy-engine.
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
 
     // verifica si los campos de fecha y hora están llenos y si no es así informar al usuario con un mensaje para correjir errores
 
@@ -75,16 +79,44 @@ const FormFunction = () => {
         formData.country
       );
       // Calcula la posición lunar usando astronomy-engine
-      const position = Astronomy.MoonPosition(birthDateTime, lat, lng);
-      setLunarPosition(position);
+      console.log("Calculating lunar position for:", {
+        date: birthDateTime,
+        lat,
+        lng,
+      });
+
+      // Convert lat and lng to Astronomy.Observer
+      const observer = new Astronomy.Observer(lat, lng, 0);
+      console.log(observer);
+
+      // Calculate the moon's position
+      const moonPosition = Astronomy.GeoMoon(birthDateTime, observer);
+      console.log(`esto es moonposition subnormal${moonPosition}`);
+
+      // Convert to spherical coordinates
+      const moonSphere = Astronomy.Equator(
+        "Moon",
+        birthDateTime,
+        observer,
+        false,
+        true
+      );
+
+      console.log("Calculated lunar position:", moonSphere);
+      setLunarPosition({
+        ra: moonSphere.ra,
+        dec: moonSphere.dec,
+        dist: moonSphere.dist,
+      });
     } catch (error) {
       setErrorMessage(
         "Error al obtener las coordenadas o calcular la posición lunar."
       );
+      console.log(error);
     }
   };
 
-  // Maneja el cambio en los inputs del formulario
+  // Maneja el cambio en los inputs del formulario, actualiza el estado de formData cada vez que un usuario modifica un campo.
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -179,16 +211,16 @@ const FormFunction = () => {
           </div>
           <div>
             <label
-              htmlFor="birthCity"
+              htmlFor="city"
               className="block text-base font-medium text-black"
             >
               Ciudad de Nacimiento
             </label>
             <input
               type="text"
-              id="birthCity"
-              name="birthCity"
-              value={formData.birthCity || ""}
+              id="city"
+              name="city"
+              value={formData.city || ""}
               onChange={handleInputChange}
               required
               className="mt-1 block w-full border border-gray-300 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300"
@@ -196,16 +228,16 @@ const FormFunction = () => {
           </div>
           <div>
             <label
-              htmlFor="birthCountry"
+              htmlFor="country"
               className="block text-base font-medium text-black"
             >
               País
             </label>
             <input
               type="text"
-              id="birthCountry"
-              name="birthCountry"
-              value={formData.birthCountry || ""}
+              id="country"
+              name="country"
+              value={formData.country || ""}
               onChange={handleInputChange}
               required
               className="mt-1 block w-full border border-gray-300 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm"
@@ -228,9 +260,10 @@ const FormFunction = () => {
 
       {lunarPosition && (
         <div className="mt-4 text-center">
-          <h3 className="text-xl font-bold">Tu Luna está en:</h3>
-          <p>Latitud: {lunarPosition.lat}</p>
-          <p>Longitud: {lunarPosition.lon}</p>
+          <h3 className="text-xl font-bold">Posición de la Luna:</h3>
+          <p>Ascensión Recta: {lunarPosition.ra.toFixed(2)} horas</p>
+          <p>Declinación: {lunarPosition.dec.toFixed(2)} grados</p>
+          <p>Distancia: {lunarPosition.dist.toFixed(2)} km</p>
         </div>
       )}
     </div>
