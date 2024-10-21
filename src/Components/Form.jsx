@@ -2,16 +2,15 @@ import React from "react";
 
 function Form() {
   return (
-    <div className="w-full bg-white p-8 flex flex-col justify-center">
-      <div className="max-w-2x1 w-full space-y-8 p-8 bg-black bg-opacity-10 backdrop-blur-md rounded-xl shadow-2xl">
-        <div className="text-center">
-          <h2 className="mt-4 text-2xl font-bold text-black">
-            Descubre tu signo lunar
-          </h2>
-          <p className="mt-2 text-base text-gray-500">
-            Ingresa tus datos para revelar los secretos de tu luna
-          </p>
-        </div>
+    <div className="w-full bg-dark-purple p-8 flex flex-col justify-center">
+      
+      <div className="text-center">
+        <h2 className=" self-center text-center font-h2 text-light-neutral-purple">
+          Descubre tu signo lunar
+        </h2>
+        <p className=" self-center text-center font-h3 text-light-neutral-purple">
+          Ingresa tus datos para revelar los secretos de tu luna
+        </p>
       </div>
 
       <form className="mt-8 space-y-6">
@@ -19,7 +18,7 @@ function Form() {
           <div>
             <label
               htmlFor="nombre"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Nombre
             </label>
@@ -34,7 +33,7 @@ function Form() {
           <div>
             <label
               htmlFor="Apellidos"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Apellidos
             </label>
@@ -43,14 +42,14 @@ function Form() {
               name="Apellidos"
               type="text"
               required
-              className="mt-1 block w-full border border-gray-400 rounded-3xl shadow-sm py-2 px3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm
+              className="mt-1 block w-full border border-gray-300 rounded-3xl shadow-sm py-2 px-3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm
          "
             />
           </div>
           <div>
             <label
               htmlFor="Fehca de Nacimiento"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Fecha de Nacimiento
             </label>
@@ -59,13 +58,13 @@ function Form() {
               name="Fecha de Nacimiento"
               type="text"
               required
-              className="mt-1 block w-full border border-gray-400 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300"
+              className="mt-1 block w-full border border-gray-300 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300"
             />
           </div>
           <div>
             <label
               htmlFor="Hora de Nacimiento"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Hora de Nacimiento
             </label>
@@ -74,13 +73,13 @@ function Form() {
               name="Hora de nacimiento"
               type="text"
               required
-              className="mt-1 block w-full border border-gray-400 rounded-3xl shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 sm:text-sm "
+              className="mt-1 block w-full border border-gray-300 rounded-3xl shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 sm:text-sm "
             />
           </div>
           <div>
             <label
               htmlFor="Lugar de nacimiento"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Lugar de nacimiento
             </label>
@@ -95,7 +94,7 @@ function Form() {
           <div>
             <label
               htmlFor="País"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               País
             </label>
@@ -108,10 +107,10 @@ function Form() {
             />
           </div>
         </div>
-        <div className="pt-4">
+        <div className="pt-4 flex justify-center">
           <button
             type="submit"
-            className="w-full flex justify-center self-start py-2 px-4 border border-gray-300 rounded-3xl shadow-lg text-base font-semibold hover:bg-slate-200 "
+            className="w-full md:w-1/2 py-2 px-4 border border-gray-300 rounded-3xl shadow-lg text-light-bg bg-dark-purple text-base font-semibold transition-colors duration-500 hover:bg-light-bg hover:text-dark-purple hover:transition-shadow duration-500 hover:shadow-glow"
           >
             Descubrir mi Signo Lunar
           </button>

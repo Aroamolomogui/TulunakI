@@ -1,6 +1,6 @@
 import Header from "./Header";
-import AstroFusion from "./AstroFusion";
 import Form from "./Form";
+import QuienesSomos from "./QuienesSomos";
 import Footer from "./Footer";
 import Hero from "./Hero";
 
@@ -8,9 +8,9 @@ function App() {
   return (
     <div>
       <Header />
-      <AstroFusion />
-      {/* <Hero />
-      <Form /> */}
+      <Hero />
+      <Form />
+      <QuienesSomos />
       <Footer />
     </div>
   );

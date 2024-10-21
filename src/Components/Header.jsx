@@ -1,57 +1,46 @@
 import React from "react";
 
-
 function Header() {
   return (
-    <header className="bg-white text-black shadow-lg">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-
-          <div className="flex items-center">
-          {/* posible icono para completar el logo con el nombre de la app recuerda poner espacios entre el logo y el texto space-x-2 al div */}
-            <span className="text-2xl font-bold">TulunakI</span>
-            </div>
-
-            <nav className="hidden md:flex items-center space-x-6">
-              <a href="/Miluna" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
-                <span className="relative"> 
-                  Mi luna
-                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                </span>
-              </a>
-
-              <a href="/Equilibrio emocional" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
-                <span className="realtive">
-                  Equilibrio emocional 
-                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                </span>
-              </a>
-
-              <a href="/Contacto" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
-                <span className="relative">
-                Contacto 
-                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                  {/* Ellis: aquí el problema era que estaba puesto "bg-black" en vez de "bg-violet-500" y por eso el subrayado salía en negro */}
-                </span>
-              </a> 
-
-              <a href="/Quienes somos" className="text-lg font-semibold hover:text-violet-500 transition duration-300 relative group">
-                <span className="realtive">
-                  Quiénes somos 
-                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-violet-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                </span>
-              </a> 
-            </nav>
-
-        </div>
-      </div>
-      <div>
-
-      </div>
+    <header className="flex items-baseline justify-between bg-light-bg p-10">
+      <h1 className="font-h1 text-main">Tulunaki</h1>
+      <nav className="flex gap-4">
+        <a
+          href=""
+          className="relative font-text text-main no-underline transition-all duration-300 hover:text-warm-purple
+                     after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-current 
+                     after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
+        >
+          Mi luna
+        </a>
+        <a
+          href=""
+          className="relative font-text text-main no-underline transition-all duration-300 hover:text-warm-purple
+                     after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-current 
+                     after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
+        >
+          Equilibrio emocional
+        </a>
+        <a
+          href=""
+          className="relative font-text text-main no-underline transition-all duration-300 hover:text-warm-purple
+                     after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-current 
+                     after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
+        >
+          Quiénes somos
+        </a>
+        <a
+          href=""
+          className="relative font-text text-main no-underline transition-all duration-300 hover:text-warm-purple
+                     after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-current 
+                     after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
+        >
+          Contacto
+        </a>
+      </nav>
     </header>
-
-  )
-  
+  );
 }
 
 export default Header;
+

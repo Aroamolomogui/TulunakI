@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-primary: "Yeseva One", serif;
+    --font-secondary: "Poppins", sans-serif;
+  }
+
+  html, body {
+    @apply w-screen m-0 p-0 box-border text-center;
+  }
+}

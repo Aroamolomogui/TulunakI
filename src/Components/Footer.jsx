@@ -1,94 +1,66 @@
-import React from "react";
-import { Instagram } from "lucide-react";
-import { FaTiktok } from "react-icons/fa6";
 
-function Footer() {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faPodcast} from '@fortawesome/free-solid-svg-icons';
+
+
+
+const Footer = () => {
   return (
-    <footer className=" text-black w-full p-12 flex flex-col justify-center items-center">
-      <div className="flex flex-col container w-full">
-        <div className="flex flex-col md:flex-row  w-full mb-4 justify-between">
-          <div className="w-full  mb-8 md:mb-0 pr-4">
-            <h3 className="text-lg font-semibold mb-4">Tulunaki Astrología</h3>
-            <p className="text-sm text-gray-300">
-              Descubre los secretos del universo y encuentra tu camino en las
-              estrellas.
-            </p>
-          </div>
-          <div className="flex flex-col justify-center items-center w-full mb-8 md:mb-0 md:px-4">
-            <h3 className="text-lg font-semibold mb-4">Enlaces rápidos</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="/"
-                  className="text-sm hover:text-white transition-colors"
-                >
-                  TulunakI
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-sm hover:text-white transition-colors"
-                >
-                  Calcula tu carta natal
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-sm hover:text-white transition-colors"
-                >
-                  Talleres
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-sm hover:text-white transition-colors"
-                >
-                  Contacto
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="w-full  md:text-right pl-4">
-            <h3 className="text-lg font-semibold mb-4">Síguenos</h3>
-            <div className="flex md:justify-end space-x-4">
-              <a
-                href="https://www.instagram.com/aroamolomogi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors group"
-                aria-label="Visita el perfil de Instagram de Aroamolomogi"
-              >
-                <Instagram
-                  size={24}
-                  className="group-hover:scale-110 transition-transform"
-                />
-              </a>
-
-              <a
-                href="https://www.tiktok.com/@aroamolomogui"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-                aria-label="Visita nuestro perfil de TikTok"
-              >
-                <FaTiktok size={24} />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-black flex w-full md:justify-center space-x-4 mb-4">
-          <p className="text-sm text-black mt-4">
-            &copy; {new Date().getFullYear()} TulunakI Astrología. Todos los
-            derechos reservados.
-          </p>
-        </div>
-      </div>
+    <footer className="footer py-10 px-24 flex justify-around items-center bg-light-bg">
+      <ul className="footer_sections list-none p-0 text-left">
+        <li>
+          <a href="" className="footer_sections-link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
+            Mi luna
+          </a>
+        </li>
+        <li>
+          <a href="" className="footer_sections-link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
+            Equilibrio emocional
+          </a>
+        </li>
+        <li>
+          <a href="" className="footer_sections-link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
+            Quiénes somos
+          </a>
+        </li>
+        <li>
+          <a href="" className="footer_sections-link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
+            Contacto
+          </a>
+        </li>
+      </ul>
+      <a href="" className="footer_logo">
+        <img src="src/assets/Logo_fondo_transparente.PNG" alt="logo" className="footer_logo-logo h-36" />
+      </a>
+      <ul className="footer_socials list-none p-0 text-left">
+        <li>
+          <a href="" className="relative transition-all duration-300 hover:text-warm-purple after:absolute  after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
+          <FontAwesomeIcon icon={faInstagram} className="h-4 w-4" />
+          <span className="footer_socials_link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0 ml-2">Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a href="" className="relative transition-all duration-300 hover:text-warm-purple after:absolute  after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
+          <FontAwesomeIcon icon={faTiktok} className="h-4 w-4" />
+          <span className="footer_socials_link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0 ml-2">TikTok</span>
+          </a>
+        </li>
+        <li>
+          <a href="" className="relative transition-all duration-300 hover:text-warm-purple after:absolute  after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
+          <FontAwesomeIcon icon={faYoutube} className="h-4 w-4" />
+          <span className="footer_socials_link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0 ml-2">YouTube</span>
+          </a>
+        </li>
+        <li>
+          <a href="" className="relative transition-all duration-300 hover:text-warm-purple after:absolute  after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
+          <FontAwesomeIcon icon={faPodcast} className=" h-4 w-4 " />
+          <span className='footer_socials_link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0 ml-2'>Podcast</span>
+          </a>
+        </li>
+      </ul>
     </footer>
   );
-}
+};
 
 export default Footer;
