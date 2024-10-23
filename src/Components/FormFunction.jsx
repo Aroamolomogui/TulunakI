@@ -1,6 +1,101 @@
 import React, { useState } from "react";
 import * as Astronomy from "astronomy-engine";
 
+/*flujo general sería:
+a. Obtener coordenadas geográficas (latitud/longitud) del lugar de nacimiento.
+b. Calcular la posición de la Luna en ese momento y lugar.
+c. Convertir esa posición a longitud eclíptica.
+d. Usar `getZodiacSign` para determinar el signo zodiacal basado en esa longitud.*/
+
+//vamos a definir los signos zodiacales y los grados creando un array de objetos
+
+const zodiacSigns = [
+  {
+    name: "Aries",
+    symbol: "♈",
+    start: 0,
+    end: 30,
+    dates: "21 de marzo - 19 de abril",
+  },
+  {
+    name: "Tauro",
+    symbol: "♉",
+    start: 30,
+    end: 60,
+    dates: "20 de abril - 20 de mayo",
+  },
+  {
+    name: "Géminis",
+    symbol: "♊",
+    start: 60,
+    end: 90,
+    dates: "21 de mayo - 20 de junio",
+  },
+  {
+    name: "Cáncer",
+    symbol: "♋",
+    start: 90,
+    end: 120,
+    dates: "21 de junio - 22 de julio",
+  },
+  {
+    name: "Leo",
+    symbol: "♌",
+    start: 120,
+    end: 150,
+    dates: "23 de julio - 22 de agosto",
+  },
+  {
+    name: "Virgo",
+    symbol: "♍",
+    start: 150,
+    end: 180,
+    dates: "23 de agosto - 22 de septiembre",
+  },
+  {
+    name: "Libra",
+    symbol: "♎",
+    start: 180,
+    end: 210,
+    dates: "23 de septiembre - 22 de octubre",
+  },
+  {
+    name: "Escorpio",
+    symbol: "♏",
+    start: 210,
+    end: 240,
+    dates: "23 de octubre - 21 de noviembre",
+  },
+  {
+    name: "Sagitario",
+    symbol: "♐",
+    start: 240,
+    end: 270,
+    dates: "22 de noviembre - 21 de diciembre",
+  },
+  {
+    name: "Capricornio",
+    symbol: "♑",
+    start: 270,
+    end: 300,
+    dates: "22 de diciembre - 19 de enero",
+  },
+  {
+    name: "Acuario",
+    symbol: "♒",
+    start: 300,
+    end: 330,
+    dates: "20 de enero - 18 de febrero",
+  },
+  {
+    name: "Piscis",
+    symbol: "♓",
+    start: 330,
+    end: 360,
+    dates: "19 de febrero - 20 de marzo",
+  },
+];
+
 // Definición de los datos del formulario en JavaScript
 const FormFunction = () => {
   const [formData, setFormData] = useState({
@@ -12,9 +107,11 @@ const FormFunction = () => {
     city: "",
   });
 
-  //hook useState para crear y manejar el estado del componente
+  //hook useState para crear y manejar el estado de los componentes aquí se almacenan los datos que vamos calculando y en su defecto cada error obtenido
 
   const [lunarPosition, setLunarPosition] = useState(null);
+  const [lunarSign, setLunarSign] = useState(null);
+  console.log(lunarSign);
   const [errorMessage, setErrorMessage] = useState("");
 
   // Función para obtener las coordenadas geográficas (longitud y latitud) usando la API de OpenCage
@@ -45,6 +142,18 @@ const FormFunction = () => {
       console.error("Error al obtener las coordenadas:", error); // 4. Si algo falla, el error se captura aquí.
       throw error;
     }
+  };
+
+  //Función para obtener el signo lunar basandose en la longitud eclíptica (coordenada astronómica) que son los 360º de la rueda zodiacal esto te dice exactamente dónde se encuentra el signo.
+  const getZodiacSign = (eclipticLongitude) => {
+    //nos aseguramos que la long siempre estará entre 0 y 360, si es negativa  le sumamos 360 para normalizarla.
+    const normalizedLongitud =
+      eclipticLongitude >= 0 ? eclipticLongitude : eclipticLongitude + 360;
+    //Devuelveme del array de zodiacsign el signo cuyo rango de º incluye la lng de la luna, con find devuelve el 1º elemento que cumple la condición y extrae su nombre
+    return zodiacSigns.find(
+      (sign) =>
+        normalizedLongitud >= sign.start && normalizedLongitud < sign.end
+    ).name;
   };
 
   // Maneja el envío del formulario, realiza validaciones, obtiene coordenadas y calcula la posición lunar utilizando al biblioteca astronomy-engine.
@@ -89,28 +198,37 @@ const FormFunction = () => {
       const observer = new Astronomy.Observer(lat, lng, 0);
       console.log(observer);
 
-      // Calculate the moon's position
-      const moonPosition = Astronomy.GeoMoon(birthDateTime, observer);
+      // posición geocéntrica de la Luna en el momento del nacimiento.
+      // saco el parámetro observer por que la posición geoccéntrica es independiente de la ubicación del observador de la Tierra
+      const moonPosition = Astronomy.GeoMoon(birthDateTime);
       console.log(`esto es moonposition subnormal${moonPosition}`);
 
-      // Convert to spherical coordinates
-      const moonSphere = Astronomy.Equator(
+      // Convierte la posición de la Luna a coordenadas ecuatoriales.
+      const moonEquator = Astronomy.Equator(
         "Moon",
+
         birthDateTime,
         observer,
-        false,
+        true,
         true
       );
+      console.log("que tenemos por el ecuador baby", moonEquator);
 
-      console.log("Calculated lunar position:", moonSphere);
+      // OJO!! Convierte la posición de la Luna a coordenadas eclípticas OJO!!! `Astronomy.Ecliptic` transforma la posición a un sistema basado en la eclíptica (el plano de la órbita de la Tierra alrededor del Sol) Este sistema es crucial para determinar el signo zodiacal.
+      const moonEcliptic = Astronomy.Ecliptic(moonPosition);
+      console.log("las coordenaditas eclipticas de la luna bb", moonEcliptic);
+
+      const zodiacsign = getZodiacSign(moonEcliptic.elon);
+
       setLunarPosition({
-        ra: moonSphere.ra,
-        dec: moonSphere.dec,
-        dist: moonSphere.dist,
+        ra: moonEquator.ra,
+        dec: moonEquator.dec,
+        dist: moonEquator.dist,
       });
+      setLunarSign(zodiacsign);
     } catch (error) {
       setErrorMessage(
-        "Error al obtener las coordenadas o calcular la posición lunar."
+        "Error al obtener las coordenadas o calcular la posición lunar"
       );
       console.log(error);
     }
@@ -266,6 +384,11 @@ const FormFunction = () => {
           <p>Distancia: {lunarPosition.dist.toFixed(2)} km</p>
         </div>
       )}
+
+      <div className="mt-4 text-center">
+        <h3 className="text-xl font-bold">Signo Lunar:</h3>
+        <p>{lunarSign}</p>
+      </div>
     </div>
   );
 };
