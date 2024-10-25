@@ -244,13 +244,13 @@ const FormFunction = () => {
   };
 
   return (
-    <div className="w-full md:w-1/2 bg-white p-8 flex flex-col justify-center">
-      <div className="max-w-2x1 w-full space-y-8 p-8 bg-black bg-opacity-10 backdrop-blur-md rounded-xl shadow-2xl">
+    <div className="w-full bg-dark-purple p-8 flex flex-col justify-center">
+      <div >
         <div className="text-center">
-          <h2 className="mt-4 text-2xl font-bold text-black">
+          <h2 className=" self-center text-center font-h2 text-light-neutral-purple">
             Descubre tu signo lunar
           </h2>
-          <p className="mt-2 text-base text-gray-500">
+          <p className=" self-center text-center font-h3 text-light-neutral-purple">
             Ingresa tus datos para revelar los secretos de tu luna
           </p>
         </div>
@@ -261,7 +261,7 @@ const FormFunction = () => {
           <div>
             <label
               htmlFor="name"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Nombre
             </label>
@@ -278,7 +278,7 @@ const FormFunction = () => {
           <div>
             <label
               htmlFor="lastName"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Apellidos
             </label>
@@ -289,14 +289,14 @@ const FormFunction = () => {
               value={formData.lastName || ""}
               onChange={handleInputChange}
               required
-              className="mt-1 block w-full border border-gray-400 rounded-3xl shadow-sm py-2 px3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm
+              className="mt-1 block w-full border border-gray-300 rounded-3xl shadow-sm py-2 px-3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm
          "
             />
           </div>
           <div>
             <label
               htmlFor="birthDate"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Fecha de Nacimiento
             </label>
@@ -307,13 +307,13 @@ const FormFunction = () => {
               value={formData.birthDate || ""}
               onChange={handleInputChange}
               required
-              className="mt-1 block w-full border border-gray-400 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300"
+              className="mt-1 block w-full border border-gray-300 rounded-3xl shadow-sm py-2 px-3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm"
             />
           </div>
           <div>
             <label
               htmlFor="birthTime"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Hora de Nacimiento
             </label>
@@ -324,13 +324,13 @@ const FormFunction = () => {
               value={formData.birthTime || ""}
               onChange={handleInputChange}
               required
-              className="mt-1 block w-full border border-gray-400 rounded-3xl shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 sm:text-sm "
+              className="mt-1 block w-full border border-gray-300 rounded-3xl shadow-sm py-2 px-3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm"
             />
           </div>
           <div>
             <label
               htmlFor="city"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               Ciudad de Nacimiento
             </label>
@@ -341,13 +341,13 @@ const FormFunction = () => {
               value={formData.city || ""}
               onChange={handleInputChange}
               required
-              className="mt-1 block w-full border border-gray-300 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300"
+              className="mt-1 block w-full border border-gray-300 rounded-3xl shadow-sm py-2 px-3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm"
             />
           </div>
           <div>
             <label
               htmlFor="country"
-              className="block text-base font-medium text-black"
+              className="font-text text-light-neutral-purple pl-4"
             >
               País
             </label>
@@ -358,14 +358,14 @@ const FormFunction = () => {
               value={formData.country || ""}
               onChange={handleInputChange}
               required
-              className="mt-1 block w-full border border-gray-300 rounded-3xl  shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm"
+              className="mt-1 block w-full border border-gray-300 rounded-3xl shadow-sm py-2 px-3 focus:outline-none  focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm"
             />
           </div>
         </div>
-        <div className="pt-4">
+        <div className="pt-4 flex justify-center">
           <button
             type="submit"
-            className="w-full flex justify-center self-start py-2 px-4 border border-gray-300 rounded-3xl shadow-lg text-base font-semibold hover:bg-slate-200 "
+            className="w-full md:w-1/2 py-2 px-4 border border-gray-300 rounded-3xl shadow-lg text-light-bg bg-dark-purple text-base font-semibold transition-colors duration-500 hover:bg-light-bg hover:text-dark-purple hover:transition-shadow duration-500 hover:shadow-glow"
           >
             Descubrir mi Signo Lunar
           </button>
@@ -378,16 +378,16 @@ const FormFunction = () => {
 
       {lunarPosition && (
         <div className="mt-4 text-center">
-          <h3 className="text-xl font-bold">Posición de la Luna:</h3>
-          <p>Ascensión Recta: {lunarPosition.ra.toFixed(2)} horas</p>
-          <p>Declinación: {lunarPosition.dec.toFixed(2)} grados</p>
-          <p>Distancia: {lunarPosition.dist.toFixed(2)} km</p>
+          <h3 className="font-h3 text-light-neutral-purple">Posición de la Luna:</h3>
+          <p className="font-text text-light-neutral-purple">Ascensión Recta: {lunarPosition.ra.toFixed(2)} horas</p>
+          <p className="font-text text-light-neutral-purple">Declinación: {lunarPosition.dec.toFixed(2)} grados</p>
+          <p className="font-text text-light-neutral-purple">Distancia: {lunarPosition.dist.toFixed(2)} km</p>
         </div>
       )}
 
       <div className="mt-4 text-center">
-        <h3 className="text-xl font-bold">Signo Lunar:</h3>
-        <p>{lunarSign}</p>
+        <h3 className="font-h3 text-light-neutral-purple">Signo Lunar:</h3>
+        <p className="font-text text-light-neutral-purple">{lunarSign}</p>
       </div>
     </div>
   );
