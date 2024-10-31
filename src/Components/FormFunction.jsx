@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as Astronomy from "astronomy-engine";
+import Results from "./Results";
 
 /*flujo general sería:
 a. Obtener coordenadas geográficas (latitud/longitud) del lugar de nacimiento.
@@ -245,7 +246,7 @@ const FormFunction = () => {
 
   return (
     <div className="w-full bg-dark-purple p-8 flex flex-col justify-center">
-      <div >
+      <div>
         <div className="text-center">
           <h2 className=" self-center text-center font-h2 text-light-neutral-purple">
             Descubre tu signo lunar
@@ -378,10 +379,18 @@ const FormFunction = () => {
 
       {lunarPosition && (
         <div className="mt-4 text-center">
-          <h3 className="font-h3 text-light-neutral-purple">Posición de la Luna:</h3>
-          <p className="font-text text-light-neutral-purple">Ascensión Recta: {lunarPosition.ra.toFixed(2)} horas</p>
-          <p className="font-text text-light-neutral-purple">Declinación: {lunarPosition.dec.toFixed(2)} grados</p>
-          <p className="font-text text-light-neutral-purple">Distancia: {lunarPosition.dist.toFixed(2)} km</p>
+          <h3 className="font-h3 text-light-neutral-purple">
+            Posición de la Luna:
+          </h3>
+          <p className="font-text text-light-neutral-purple">
+            Ascensión Recta: {lunarPosition.ra.toFixed(2)} horas
+          </p>
+          <p className="font-text text-light-neutral-purple">
+            Declinación: {lunarPosition.dec.toFixed(2)} grados
+          </p>
+          <p className="font-text text-light-neutral-purple">
+            Distancia: {lunarPosition.dist.toFixed(2)} km
+          </p>
         </div>
       )}
 
@@ -389,6 +398,9 @@ const FormFunction = () => {
         <h3 className="font-h3 text-light-neutral-purple">Signo Lunar:</h3>
         <p className="font-text text-light-neutral-purple">{lunarSign}</p>
       </div>
+
+      {/*componente con los resultados de los signos*/}
+      {lunarSign && <Results lunarSign={lunarSign} />}
     </div>
   );
 };
