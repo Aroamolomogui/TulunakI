@@ -10,7 +10,6 @@ function App() {
       <Header />
       <Hero />
       <QuienesSomos />
-
       <FormFunction />
       <Footer />
     </div>
