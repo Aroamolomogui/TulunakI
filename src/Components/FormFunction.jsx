@@ -226,11 +226,11 @@ const FormFunction = () => {
         dec: moonEquator.dec,
         dist: moonEquator.dist,
       });
-      setLunarSign(zodiacsign);
+      setLunarSign(zodiacsign); //Almacena el signo lunar calculado
     } catch (error) {
       setErrorMessage(
         "Error al obtener las coordenadas o calcular la posición lunar"
-      );
+      ); // Limpiar el mensaje de error calculado
       console.log(error);
     }
   };
@@ -238,10 +238,7 @@ const FormFunction = () => {
   // Maneja el cambio en los inputs del formulario, actualiza el estado de formData cada vez que un usuario modifica un campo.
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   return (
@@ -256,7 +253,6 @@ const FormFunction = () => {
           </p>
         </div>
       </div>
-
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -372,12 +368,10 @@ const FormFunction = () => {
           </button>
         </div>
       </form>
-
       {errorMessage && (
         <p className="text-red-500 text-center mt-4">{errorMessage}</p>
       )}
-
-      {lunarPosition && (
+      {/* {lunarPosition && (
         <div className="mt-4 text-center">
           <h3 className="font-h3 text-light-neutral-purple">
             Posición de la Luna:
@@ -392,13 +386,16 @@ const FormFunction = () => {
             Distancia: {lunarPosition.dist.toFixed(2)} km
           </p>
         </div>
+      )} */}
+      {/* Mostrar el signo lunar solo si lunarSign tiene un valor */}´
+      {lunarSign && (
+        <div className="mt-4 text-center">
+          <h3 className="font-h3 text-light-neutral-purple">
+            Tu signo lunar es:
+          </h3>
+          <p className="font-text text-light-neutral-purple">{lunarSign}</p>
+        </div>
       )}
-
-      <div className="mt-4 text-center">
-        <h3 className="font-h3 text-light-neutral-purple">Signo Lunar:</h3>
-        <p className="font-text text-light-neutral-purple">{lunarSign}</p>
-      </div>
-
       {/*componente con los resultados de los signos*/}
       {lunarSign && <Results lunarSign={lunarSign} />}
     </div>
