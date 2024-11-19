@@ -8,9 +8,9 @@ import { faPodcast } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="footer py-10 px-24 flex justify-around items-center bg-light-bg">
-      <ul className="footer_sections list-none p-0 text-left">
-        <li>
+    <footer className="footer py-10 px-4 md:px-24 flex flex-col md:flex-row justify-around items-center bg-light-bg max-w-[1440px] max-w-full scroll-smooth">
+      <ul className="footer_sections list-none p-0 text-center md:text-left mb-8 md:mb-0">
+        <li className="mb-4 md:mb-2">
           <a
             href=""
             className="footer_sections-link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
@@ -18,7 +18,7 @@ const Footer = () => {
             Mi luna
           </a>
         </li>
-        <li>
+        <li className="mb-4 md:mb-2">
           <a
             href=""
             className="footer_sections-link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
@@ -26,7 +26,7 @@ const Footer = () => {
             Equilibrio emocional
           </a>
         </li>
-        <li>
+        <li className="mb-4 md:mb-2">
           <a
             href=""
             className="footer_sections-link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
@@ -43,29 +43,30 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <a href="" className="footer_logo">
+      <a href="" className="footer_logo mb-8 md:mb-0">
         <img
           src="/transparente.PNG"
           alt="logo"
-          className="footer_logo-logo h-36"
+          width={144}
+          height={144}
+          className="footer_logo-logo h-24 w-24 md:h-36 md:w-36"
         />
       </a>
-      <ul className="footer_socials list-none p-0 text-left">
-        <li>
+      <ul className="footer_socials list-none p-0 text-center md:text-left">
+        <li className="mb-4 md:mb-2">
           <a
-            href=""
-            className="relative transition-all duration-300 hover:text-warm-purple after:absolute  after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
-          >
+            href="https://www.instagram.com/tulunaki_podcast/"
+            className="flex items-center justify-center md:justify-start relative transition-all duration-300 hover:text-warm-purple after:absolute after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0">
             <FontAwesomeIcon icon={faInstagram} className="h-4 w-4" />
             <span className="footer_socials_link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0 ml-2">
               Instagram
             </span>
           </a>
         </li>
-        <li>
+        <li className="mb-4 md:mb-2">
           <a
-            href=""
-            className="relative transition-all duration-300 hover:text-warm-purple after:absolute  after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
+            href="https://www.tiktok.com/@tulunaki_podcast"
+            className="flex items-center justify-center md:justify-start relative transition-all duration-300 hover:text-warm-purple after:absolute after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
           >
             <FontAwesomeIcon icon={faTiktok} className="h-4 w-4" />
             <span className="footer_socials_link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0 ml-2">
@@ -73,10 +74,10 @@ const Footer = () => {
             </span>
           </a>
         </li>
-        <li>
+        <li className="mb-4 md:mb-2">
           <a
-            href=""
-            className="relative transition-all duration-300 hover:text-warm-purple after:absolute  after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
+            href="https://youtube.com/@tulunakipodcast?si=bXme4ObRtrs_UrMa"
+            className="flex items-center justify-center md:justify-start relative transition-all duration-300 hover:text-warm-purple after:absolute after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
           >
             <FontAwesomeIcon icon={faYoutube} className="h-4 w-4" />
             <span className="footer_socials_link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0 ml-2">
@@ -86,10 +87,10 @@ const Footer = () => {
         </li>
         <li>
           <a
-            href=""
-            className="relative transition-all duration-300 hover:text-warm-purple after:absolute  after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
+            href="https://open.spotify.com/show/15LEmcOm5wQjzYlNXQiVlP?si=tEo-HZR5Tg-HLPpPbg4G_Q"
+            className="flex items-center justify-center md:justify-start relative transition-all duration-300 hover:text-warm-purple after:absolute after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0"
           >
-            <FontAwesomeIcon icon={faPodcast} className=" h-4 w-4 " />
+            <FontAwesomeIcon icon={faPodcast} className="h-4 w-4" />
             <span className="footer_socials_link text-main-text font-links no-underline relative transition-all duration-300 hover:text-warm-purple after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0 ml-2">
               Podcast
             </span>

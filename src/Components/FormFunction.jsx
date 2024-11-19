@@ -244,7 +244,7 @@ const FormFunction = () => {
   };
 
   return (
-    <div className="w-full bg-dark-purple p-8 flex flex-col justify-center">
+    <div id="mi_luna" className="w-full bg-dark-purple p-8 flex flex-col justify-center max-w-[1440px] max-w-full scroll-smooth">
       <div >
         <div className="text-center">
           <h2 className=" self-center text-center font-h2 text-light-neutral-purple">
