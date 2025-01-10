@@ -28,11 +28,11 @@ const adviceData = {
     modality: "Fijo",
     signType: "Personal",
     introduction:
-      "El periodo de Tauro es una época para construir bases sólidas y disfrutar de la estabilidad.",
+      "La energía de Tauro es una época para construir bases sólidas y disfrutar de la estabilidad.",
     advice: "Regálate momentos de descanso y confort en un espacio tranquilo.",
     strengths:
       "Tienes una naturaleza constante, paciente, confiable y práctica. Permite que tu luna florezca en calma.",
-    phrase: "Me siento seguro y en paz.",
+    phrase: "Yo construyo.",
     phraseOne: "Encuentro paz en la estabilidad.",
     reflectiveQuestions:
       "¿Estoy creando una vida estable? ¿Qué me hace sentir seguro?",
@@ -135,7 +135,7 @@ const adviceData = {
     phraseOne: "Mis emociones me guían hacia la verdad.",
     reflectiveQuestions:
       "¿Estoy dispuesto a sanar mis heridas? ¿Qué puedo dejar atrás para avanzar?",
-    image: "/images/escorpio.jpg",
+    image: "/Scorpio.jpg",
   },
   Sagitario: {
     symbol: "♐",
