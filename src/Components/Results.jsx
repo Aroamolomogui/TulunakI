@@ -213,14 +213,14 @@ const Results = ({ lunarSign }) => {
   }
   console.log(adviceData.Cáncer.image);
   return (
-    <div className=" w-full bg-light-purple p-6 rounded-lg shadow-md mt-4 flex flex-col justify-center">
+    <div className=" w-full bg-light-purple rounded-lg shadow-md mt-4 flex flex-col justify-center">
       <div>
         <div className="text-center">
           {/* Imagen del signo lunar */}
           <img
             src={signData.image}
             alt={`Imagen para ${lunarSign}`}
-            className="w-32 h-32 mx-auto rounded-full shadow-md mt-6 text-center text-light-neutral-purple"
+            className="w-48 h-48 mx-auto rounded-full shadow-md mt-6 mb-10 text-center text-light-neutral-purple"
           />
           {/* Título e introducción del signo */}
           {/* <div className="border border-light-purple p-4 rounded-lg shadow-sm mb-6">
