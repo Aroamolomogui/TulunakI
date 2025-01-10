@@ -11,7 +11,7 @@ const adviceData = {
     modality: "Cardinal",
     signType: "Personal",
     introduction:
-      "El periodo de Aries se enfoca en el inicio de proyectos y la acción directa.",
+      "La energía de Aries se enfoca en el inicio y la acción directa.",
     advice:
       "Mantén una rutina de ejercicios para canalizar tu energía de manera positiva.",
     strengths:
@@ -20,7 +20,7 @@ const adviceData = {
     phraseOne: "Actúo con confianza y determinación.",
     reflectiveQuestions:
       "¿Estoy tomando la iniciativa en mi vida? ¿Cuáles son mis metas personales?",
-    image: "/images/aries.jpg",
+    image: "/images/Aries.jpg/",
   },
   Tauro: {
     symbol: "♉",
@@ -36,7 +36,7 @@ const adviceData = {
     phraseOne: "Encuentro paz en la estabilidad.",
     reflectiveQuestions:
       "¿Estoy creando una vida estable? ¿Qué me hace sentir seguro?",
-    image: "/images/taurus.jpg",
+    image: "/Taurus.jpg",
   },
   Géminis: {
     symbol: "♊",
@@ -52,7 +52,7 @@ const adviceData = {
     phraseOne: "Mi mente es un universo de posibilidades.",
     reflectiveQuestions:
       "¿Estoy compartiendo mis ideas? ¿Qué conocimientos nuevos puedo adquirir?",
-    image: "/images/geminis.jpg",
+    image: "/Geminis.jpg",
   },
 
   Cáncer: {
@@ -70,7 +70,7 @@ const adviceData = {
     reflectiveQuestions:
       "¿Estoy atendiendo mis necesidades emocionales? ¿Me siento seguro en mi hogar? ¿Confías en tu intuición? ¿Cómo expresas tus emociones? ¿Las dejas ser y existir?",
 
-    image: "/toroenfermo.jpg",
+    image: "/Cancer.jpg",
   },
   Leo: {
     symbol: "♌",
@@ -87,7 +87,7 @@ const adviceData = {
     phraseOne: "Mi creatividad es mi expresión más auténtica.",
     reflectiveQuestions:
       "¿Estoy expresando mi verdadero yo? ¿Qué me hace sentir realizado?",
-    image: "/images/leo.jpg",
+    image: "/Leo.jpg",
   },
   Virgo: {
     symbol: "♍",
@@ -103,7 +103,7 @@ const adviceData = {
     phraseOne: "Ayudar a otros me da propósito.",
     reflectiveQuestions:
       "¿Estoy cuidando los detalles importantes? ¿Me siento organizado?",
-    image: "/images/virgo.jpg",
+    image: "/Virgo.jpg",
   },
   Libra: {
     symbol: "♎",
@@ -119,7 +119,7 @@ const adviceData = {
     phraseOne: "Busco el balance en cada aspecto de mi vida.",
     reflectiveQuestions:
       "¿Mis relaciones son equilibradas? ¿Dónde puedo encontrar paz?",
-    image: "/images/libra.jpg",
+    image: "/Libra.jpg",
   },
   Escorpio: {
     symbol: "♏",
@@ -152,7 +152,7 @@ const adviceData = {
     phraseOne: "Cada día es una oportunidad de aprendizaje.",
     reflectiveQuestions:
       "¿Qué nuevas experiencias me esperan? ¿Dónde encuentro mi libertad?",
-    image: "/images/sagitario.jpg",
+    image: "/Sagitarius.jpg",
   },
   Capricornio: {
     symbol: "♑",
@@ -168,7 +168,7 @@ const adviceData = {
     phraseOne: "Soy constante en la búsqueda de mis sueños.",
     reflectiveQuestions:
       "¿Estoy avanzando hacia mis metas? ¿Reconozco mis propios logros?",
-    image: "/images/capricornio.jpg",
+    image: "/Capricornio.jpg",
   },
   Acuario: {
     symbol: "♒",
@@ -184,7 +184,7 @@ const adviceData = {
     phraseOne: "Mi autenticidad es mi fortaleza.",
     reflectiveQuestions:
       "¿Estoy rodeado de personas que comparten mis valores? ¿Cómo puedo aportar al bienestar común?",
-    image: "/images/acuario.jpg",
+    image: "/Aquiarius.jpg",
   },
   Piscis: {
     symbol: "♓",
@@ -201,7 +201,7 @@ const adviceData = {
     phraseOne: "La empatía y la compasión son mis dones.",
     reflectiveQuestions:
       "¿Me estoy permitiendo soñar? ¿Estoy cuidando de mi bienestar emocional?",
-    image: "/images/piscis.jpg",
+    image: "/Piscis.jpg",
   },
 };
 
