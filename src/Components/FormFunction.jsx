@@ -390,10 +390,10 @@ const FormFunction = () => {
       {/* Mostrar el signo lunar solo si lunarSign tiene un valor */}´
       {lunarSign && (
         <div className="mt-4 text-center">
-          <h3 className="font-h3 text-light-neutral-purple">
-            Tu signo lunar es:
+          <h3 className="font-h2 text-light-neutral-purple">
+            {formData.name} naciste con la luna en:
           </h3>
-          <p className="font-text text-light-neutral-purple">{lunarSign}</p>
+          <h2 className="font-h2 text-light-neutral-purple">{lunarSign}</h2>
         </div>
       )}
       {/*componente con los resultados de los signos*/}
