@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as Astronomy from "astronomy-engine";
+import Results from "./Results";
 
 /*flujo general sería:
 a. Obtener coordenadas geográficas (latitud/longitud) del lugar de nacimiento.
@@ -225,11 +226,11 @@ const FormFunction = () => {
         dec: moonEquator.dec,
         dist: moonEquator.dist,
       });
-      setLunarSign(zodiacsign);
+      setLunarSign(zodiacsign); //Almacena el signo lunar calculado
     } catch (error) {
       setErrorMessage(
         "Error al obtener las coordenadas o calcular la posición lunar"
-      );
+      ); // Limpiar el mensaje de error calculado
       console.log(error);
     }
   };
@@ -237,15 +238,12 @@ const FormFunction = () => {
   // Maneja el cambio en los inputs del formulario, actualiza el estado de formData cada vez que un usuario modifica un campo.
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   return (
     <div className="w-full bg-dark-purple p-8 flex flex-col justify-center">
-      <div >
+      <div>
         <div className="text-center">
           <h2 className=" self-center text-center font-h2 text-light-neutral-purple">
             Descubre tu signo lunar
@@ -255,7 +253,6 @@ const FormFunction = () => {
           </p>
         </div>
       </div>
-
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -371,24 +368,36 @@ const FormFunction = () => {
           </button>
         </div>
       </form>
-
       {errorMessage && (
         <p className="text-red-500 text-center mt-4">{errorMessage}</p>
       )}
-
-      {lunarPosition && (
+      {/* {lunarPosition && (
         <div className="mt-4 text-center">
-          <h3 className="font-h3 text-light-neutral-purple">Posición de la Luna:</h3>
-          <p className="font-text text-light-neutral-purple">Ascensión Recta: {lunarPosition.ra.toFixed(2)} horas</p>
-          <p className="font-text text-light-neutral-purple">Declinación: {lunarPosition.dec.toFixed(2)} grados</p>
-          <p className="font-text text-light-neutral-purple">Distancia: {lunarPosition.dist.toFixed(2)} km</p>
+          <h3 className="font-h3 text-light-neutral-purple">
+            Posición de la Luna:
+          </h3>
+          <p className="font-text text-light-neutral-purple">
+            Ascensión Recta: {lunarPosition.ra.toFixed(2)} horas
+          </p>
+          <p className="font-text text-light-neutral-purple">
+            Declinación: {lunarPosition.dec.toFixed(2)} grados
+          </p>
+          <p className="font-text text-light-neutral-purple">
+            Distancia: {lunarPosition.dist.toFixed(2)} km
+          </p>
+        </div>
+      )} */}
+      {/* Mostrar el signo lunar solo si lunarSign tiene un valor */}´
+      {lunarSign && (
+        <div className="mt-4 text-center">
+          <h3 className="font-h2 text-light-neutral-purple">
+            {formData.name} naciste con la luna en:
+          </h3>
+          <h2 className="font-h2 text-light-neutral-purple">{lunarSign}</h2>
         </div>
       )}
-
-      <div className="mt-4 text-center">
-        <h3 className="font-h3 text-light-neutral-purple">Signo Lunar:</h3>
-        <p className="font-text text-light-neutral-purple">{lunarSign}</p>
-      </div>
+      {/*componente con los resultados de los signos*/}
+      {lunarSign && <Results lunarSign={lunarSign} />}
     </div>
   );
 };

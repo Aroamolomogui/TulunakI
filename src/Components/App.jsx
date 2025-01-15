@@ -3,6 +3,7 @@ import QuienesSomos from "./QuienesSomos";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import FormFunction from "./FormFunction";
+import Results from "./Results";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <QuienesSomos />
 
       <FormFunction />
+      <Results />
       <Footer />
     </div>
   );
