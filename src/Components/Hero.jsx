@@ -2,9 +2,12 @@ import React from "react";
 
 function Hero() {
   return (
-    <section className="flex justify-between items-center bg-light-bg">
-      <img src="/moon.jpg" alt="" className="w-1/2" />
-      <p className="w-1/2 p-[70px] text-[40px] font-primary text-main-text text-justify">
+    <section className=" container mx-auto w-full p-6 bg-light-bg">
+      {/* <img src="src/assets/woman_holding_moon.jpg" alt="" className="w-1/2" /> */}
+      <h1 className="text-center text-6xl p-4 bg-gradient-to-b font-primary text-main-text">
+        Bienvenid@ a tu viaje lunar
+      </h1>
+      <p className=" text-center text-3xl mt-2 bg-gradient-to-b font-primary">
         Despierta tu serenidad interior y encuentra el camino hacia un
         equilibrio duradero.
       </p>
