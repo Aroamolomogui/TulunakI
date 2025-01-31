@@ -3,6 +3,7 @@ import QuienesSomos from "./QuienesSomos";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import Contador from "./Contador";
+import ResultContador from "./ResultContador";
 import FormFunction from "./FormFunction";
 import Results from "./Results";
 
@@ -11,8 +12,9 @@ function App() {
     <div>
       {/* <Header /> */}
       <Hero />
-      <Contador />
-      <QuienesSomos />
+      {/* <Contador /> */}
+      <ResultContador />
+      {/* <QuienesSomos /> */}
       <FormFunction />
       <Results />
       <Footer />

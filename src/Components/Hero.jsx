@@ -2,7 +2,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <section className=" container mx-auto w-full p-6 bg-light-bg">
+    <section className="p-10 bg-light-bg">
       {/* <img src="src/assets/woman_holding_moon.jpg" alt="" className="w-1/2" /> */}
       <h1 className="text-center text-6xl p-4 bg-gradient-to-b font-primary text-main-text">
         Bienvenid@ a tu viaje lunar
